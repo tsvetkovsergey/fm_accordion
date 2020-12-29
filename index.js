@@ -11,7 +11,7 @@ let womanMobileCreated = false;
 
 // Button behavior for FAQ items
 const questions = document.querySelectorAll(".question");
-Array.from(questions).forEach(question => {
+questions.forEach(question => {
     question.addEventListener('click', function(event) {
         this.classList.toggle("active");
         let panel = this.nextElementSibling;
