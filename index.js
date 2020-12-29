@@ -1,5 +1,6 @@
 
 const mediaQuery = window.matchMedia('(min-width: 1001px)');
+
 const womanImage = document.querySelector('#woman-img');
 const womanDesktopUrl = "images/illustration-woman-online-desktop.svg";
 const womanMobileUrl = "images/illustration-woman-online-mobile.svg";
@@ -8,6 +9,7 @@ let boxCreated = false;
 let womanDesktopCreated = false;
 let womanMobileCreated = false;
 
+// Button behavior for FAQ items
 const questions = document.querySelectorAll(".question");
 Array.from(questions).forEach(question => {
     question.addEventListener('click', function(event) {
@@ -18,6 +20,7 @@ Array.from(questions).forEach(question => {
         } else {
             panel.style.maxHeight = panel.scrollHeight / 10 + "rem";
         }
+        //  Rotate down arrow icons (animated with css)
         let img = this.querySelector("img");
         if(!img.style.transform) {
             this.querySelector("img").style.transform = "rotate(180deg)";
@@ -28,20 +31,28 @@ Array.from(questions).forEach(question => {
     });
 });
 
+// Create box image for desktop view
 const boxImage = document.createElement('img');
 boxImage.setAttribute('id', 'box-img');
 boxImage.setAttribute('src', 'images/illustration-box-desktop.svg');
 boxImage.setAttribute('alt', "Small box image with floating animation")
 
+// Initial creation of images in card
+createBoxImage();
+createWomanImage();
+
+// Change images every time view alternate
+// between mobile and desktop
 window.addEventListener('resize', function(e) {
     createBoxImage();
     createWomanImage();
 });
 
+// Create (for desktop) or remove (for mobile)
+// box image from DOM
 function createBoxImage() {
     if(mediaQuery.matches) {
         if(!boxCreated) {
-            console.log("Not there");
             document.querySelector('.container').appendChild(boxImage);
             boxCreated = true;
         }
@@ -53,6 +64,8 @@ function createBoxImage() {
     }
 }
 
+// Change woman image depending on
+// current view (desktop/mobile)
 function createWomanImage() {
     if(mediaQuery.matches) {
         if(!womanDesktopCreated) {
@@ -68,6 +81,3 @@ function createWomanImage() {
         }
     }
 }
-
-createBoxImage();
-createWomanImage();

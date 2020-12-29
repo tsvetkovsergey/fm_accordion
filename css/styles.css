@@ -50,23 +50,23 @@
 
 @-webkit-keyframes womanMovement {
   from {
-    -webkit-transform: translate(-55%, -55%);
-            transform: translate(-55%, -55%);
+    -webkit-transform: translate(-14.8rem, -9rem);
+            transform: translate(-14.8rem, -9rem);
   }
   to {
-    -webkit-transform: translate(-55%, -43%);
-            transform: translate(-55%, -43%);
+    -webkit-transform: translate(-14.8rem, -13rem);
+            transform: translate(-14.8rem, -13rem);
   }
 }
 
 @keyframes womanMovement {
   from {
-    -webkit-transform: translate(-55%, -55%);
-            transform: translate(-55%, -55%);
+    -webkit-transform: translate(-14.8rem, -9rem);
+            transform: translate(-14.8rem, -9rem);
   }
   to {
-    -webkit-transform: translate(-55%, -43%);
-            transform: translate(-55%, -43%);
+    -webkit-transform: translate(-14.8rem, -13rem);
+            transform: translate(-14.8rem, -13rem);
   }
 }
 
@@ -201,8 +201,8 @@ h3 {
 @media screen and (max-width: 1000px) {
   .container .card #woman-img {
     left: 50%;
-    -webkit-transform: translate(-55%, -55%);
-            transform: translate(-55%, -55%);
+    -webkit-transform: translate(-14.8rem, -9rem);
+            transform: translate(-14.8rem, -9rem);
   }
 }
 
@@ -253,6 +253,12 @@ h3 {
   color: #1d1e35;
   font-size: 3.3rem;
   margin-bottom: 1.6rem;
+  -webkit-transition: color .4s;
+  transition: color .4s;
+}
+
+.container .card .faq h1:hover {
+  color: #535697;
 }
 
 @media screen and (max-width: 1000px) {
@@ -268,7 +274,7 @@ h3 {
 .question-container .question {
   color: #4a4b5e;
   cursor: pointer;
-  padding-top: 0.8rem;
+  padding-top: .8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -278,8 +284,12 @@ h3 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.question-container .question:hover {
+  color: #f47c57;
 }
 
 .question-container .question h3 {
@@ -295,10 +305,6 @@ h3 {
   transition: -webkit-transform ease-out 0.2s;
   transition: transform ease-out 0.2s;
   transition: transform ease-out 0.2s, -webkit-transform ease-out 0.2s;
-}
-
-.question:hover {
-  color: #f47c57;
 }
 
 .active h3 {

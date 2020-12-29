@@ -1,6 +1,5 @@
-
-@import 'utility';
-@import 'animation';
+@import "utility";
+@import "animation";
 
 html {
   font-size: 62.5%;
@@ -84,7 +83,7 @@ h3 {
       //
       &::before {
         content: "";
-        position: absolute;;
+        position: absolute;
         width: 100%;
         height: 100%;
         background: url("../images/bg-pattern-mobile.svg") 0 0 no-repeat;
@@ -104,8 +103,9 @@ h3 {
       }
 
       @media screen and (max-width: 1000px) {
-        left: 50%;;
-        transform: translate(-55%, -55%);
+        left: 50%;
+        // transform: translate(-55%, -55%);
+        transform: translate(-14.8rem, -9rem);
       }
     }
 
@@ -134,18 +134,29 @@ h3 {
       .gradient-layer-top {
         @extend .gradient-layer;
         top: 0;
-        background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+        background-image: linear-gradient(
+          rgba(255, 255, 255, 1),
+          rgba(255, 255, 255, 0)
+        );
       }
       .gradient-layer-bottom {
         @extend .gradient-layer;
         bottom: 0;
-        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+        background-image: linear-gradient(
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 1)
+        );
       }
 
       h1 {
         color: $very-dark-desaturated-blue;
         font-size: 3.3rem;
         margin-bottom: 1.6rem;
+        transition: color .4s;
+
+        &:hover {
+          color: lighten($very-dark-desaturated-blue, 30%);
+        }
 
         @media screen and (max-width: 1000px) {
           text-align: center;
@@ -161,11 +172,15 @@ h3 {
   .question {
     color: $very-dark-grayish-blue;
     cursor: pointer;
-    padding-top: 0.8rem;
+    padding-top: .8rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: 0.4s;
+    transition: .4s;
+
+    &:hover {
+      color: $soft-red;
+    }
 
     h3 {
       margin: 1.3rem 0 1.4rem;
@@ -179,10 +194,6 @@ h3 {
       transition: transform ease-out 0.2s;
     }
   }
-}
-
-.question:hover {
-  color: $soft-red;
 }
 
 .active h3 {
@@ -215,6 +226,7 @@ h3 {
   left: 50%;
   bottom: 1rem;
   transform: translateX(-50%);
+
   a {
     color: lighten(hsl(228, 45%, 44%), 80%);
     text-decoration: none;
