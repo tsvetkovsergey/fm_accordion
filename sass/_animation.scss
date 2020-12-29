@@ -1,14 +1,36 @@
 
-@keyframes boxMovement {
-    from {transform: translate(-43.8rem, 6rem);}
-    to {transform: translate(-43.8rem, 3rem);}
+@mixin setAnimationSettings($animationName) {
+    animation-name: $animationName;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
 }
 
 %animatedBox {
-  animation-name: boxMovement;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+    @include setAnimationSettings(boxMovement);
 }
 
+%animatedWoman {
+    @media screen and(max-width: 1000px) {
+        @include setAnimationSettings(womanMovement);
+    }
+}
+
+@keyframes boxMovement {
+  from {
+    transform: translate(-43.8rem, 6rem);
+  }
+  to {
+    transform: translate(-43.8rem, 3rem);
+  }
+}
+
+@keyframes womanMovement {
+  from {
+    transform: translate(-55%, -55%);
+  }
+  to {
+    transform: translate(-55%, -43%);
+  }
+}

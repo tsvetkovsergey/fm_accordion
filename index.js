@@ -29,8 +29,9 @@ Array.from(questions).forEach(question => {
 });
 
 const boxImage = document.createElement('img');
-boxImage.setAttribute('src', 'images/illustration-box-desktop.svg');
 boxImage.setAttribute('id', 'box-img');
+boxImage.setAttribute('src', 'images/illustration-box-desktop.svg');
+boxImage.setAttribute('alt', "Small box image with floating animation")
 
 window.addEventListener('resize', function(e) {
     createBoxImage();

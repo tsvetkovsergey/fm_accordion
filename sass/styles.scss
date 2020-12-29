@@ -64,6 +64,16 @@ h3 {
       margin-left: 4rem;
       height: 51rem;
       justify-content: flex-end;
+      //
+      &::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -58%;
+        left: -62.5%;
+        background: url("../images/bg-pattern-desktop.svg") 0 0 no-repeat;
+      }
     }
 
     @media screen and (max-width: 1000px) {
@@ -71,9 +81,19 @@ h3 {
       flex-basis: 90vw;
       margin-top: 9rem;
       overflow: visible;
+      //
+      &::before {
+        content: "";
+        position: absolute;;
+        width: 100%;
+        height: 100%;
+        background: url("../images/bg-pattern-mobile.svg") 0 0 no-repeat;
+        background-position: top;
+      }
     }
 
     #woman-img {
+      @extend %animatedWoman;
       z-index: 1;
       position: absolute;
 
@@ -86,29 +106,6 @@ h3 {
       @media screen and (max-width: 1000px) {
         left: 50%;;
         transform: translate(-55%, -55%);
-      }
-    }
-
-    @media screen and (max-width: 1000px) {
-      &::before {
-        content: "";
-        position: absolute;;
-        width: 100%;
-        height: 100%;
-        background: url("../images/bg-pattern-mobile.svg") 0 0 no-repeat;
-        background-position: top;
-      }
-    }
-
-    @media screen and (min-width: 1001px) {
-      &::before {
-        content: "";
-        position: absolute;
-        width: 200%;
-        height: 200%;
-        top: -58%;
-        left: -62.5%;
-        background: url("../images/bg-pattern-desktop.svg") 0 0 no-repeat;
       }
     }
 
@@ -131,7 +128,7 @@ h3 {
         height: 6rem;
         position: absolute;
         @media screen and (max-width: 1000px) {
-          visibility: hidden;
+          display: none;
         }
       }
       .gradient-layer-top {
