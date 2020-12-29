@@ -1,0 +1,216 @@
+
+@import 'utility';
+@import 'animation';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: linear-gradient($soft-violet, $soft-blue) no-repeat;
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0;
+  position: relative;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+.container {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 5rem;
+
+  @media screen and (max-width: 1000px) {
+    padding-bottom: 9rem;
+  }
+
+  #box-img {
+    @extend %animatedBox;
+    width: 19.1rem;
+    height: 18.4rem;
+    z-index: 2;
+    position: absolute;
+    transform: translate(-43.8rem, 6rem);
+  }
+
+  .card {
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    // Shadow
+    box-shadow: 0px 35px 67px -24px #1b1b66;
+
+    background-color: #fff;
+    border-radius: 2.4rem;
+    flex-basis: 92rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    display: flex;
+
+    @media (min-width: 1001px) {
+      margin-left: 4rem;
+      height: 51rem;
+      justify-content: flex-end;
+    }
+
+    @media screen and (max-width: 1000px) {
+      flex-direction: column;
+      flex-basis: 90vw;
+      margin-top: 9rem;
+      overflow: visible;
+    }
+
+    #woman-img {
+      z-index: 1;
+      position: absolute;
+
+      @media screen and (min-width: 1001px) {
+        width: 47.2rem;
+        height: 35.9rem;
+        transform: translate(-53rem, 7rem);
+      }
+
+      @media screen and (max-width: 1000px) {
+        left: 50%;;
+        transform: translate(-55%, -55%);
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      &::before {
+        content: "";
+        position: absolute;;
+        width: 100%;
+        height: 100%;
+        background: url("../images/bg-pattern-mobile.svg") 0 0 no-repeat;
+        background-position: top;
+      }
+    }
+
+    @media screen and (min-width: 1001px) {
+      &::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        top: -58%;
+        left: -62.5%;
+        background: url("../images/bg-pattern-desktop.svg") 0 0 no-repeat;
+      }
+    }
+
+    .faq {
+      box-sizing: border-box;
+      flex-basis: 42.4rem;
+      margin: 0 2rem 0 0;
+      padding: 5rem 8rem 6rem 0;
+      overflow: scroll;
+      z-index: 3;
+
+      @media screen and (max-width: 1000px) {
+        margin: 0;
+        padding: 12rem 7% 15%;
+        overflow: visible;
+      }
+
+      h1 {
+        color: $very-dark-desaturated-blue;
+        font-size: 3.3rem;
+        margin-bottom: 1.6rem;
+
+        @media screen and (max-width: 1000px) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.question-container {
+  border-bottom: solid $light-grayish-blue 1px;
+
+  .question {
+    color: $very-dark-grayish-blue;
+    cursor: pointer;
+    padding-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.4s;
+
+    h3 {
+      margin: 1.3rem 0 1.4rem;
+      line-height: 1.5;
+    }
+
+    img {
+      width: 1rem;
+      height: 0.7rem;
+      margin: 0 1rem;
+      transition: transform ease-out 0.2s;
+    }
+  }
+}
+
+.question:hover {
+  color: $soft-red;
+}
+
+.active h3 {
+  font-weight: 700;
+}
+
+.panel {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  padding-right: 6rem;
+  transition: max-height 0.4s ease-out;
+
+  p {
+    color: $dark-grayish-blue;
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 1.4rem;
+  }
+}
+
+.attribution {
+  color: lighten(hsl(228, 45%, 44%), 40%);
+  font-size: 11px;
+  line-height: 2;
+  text-align: center;
+  width: 90vw;
+
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  a {
+    color: lighten(hsl(228, 45%, 44%), 80%);
+    text-decoration: none;
+    &:hover {
+      color: hsl(14, 88%, 85%);
+      font-weight: 700;
+    }
+  }
+
+  @media screen and (max-width: 499px) {
+    span {
+      display: block;
+    }
+  }
+}

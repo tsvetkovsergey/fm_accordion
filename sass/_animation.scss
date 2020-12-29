@@ -1,0 +1,14 @@
+
+@keyframes boxMovement {
+    from {transform: translate(-43.8rem, 6rem);}
+    to {transform: translate(-43.8rem, 3rem);}
+}
+
+%animatedBox {
+  animation-name: boxMovement;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
